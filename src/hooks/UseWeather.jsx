@@ -28,7 +28,7 @@ export default function UseWeather() {
     Swal.fire({
       icon: "error",
       title: "Acceso a la ubicación denegado",
-      text: "Activa la ubicación y recarga la página",
+      text: "Por favor, activa la ubicación y recarga la página",
     });
   };
 
