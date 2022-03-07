@@ -1,12 +1,27 @@
 import Image from "next/image";
 import { BiArrowToRight, BiMapPin } from "react-icons/bi";
+import { motion } from "framer-motion";
 
 export default function WeatherResult({ weather, error }) {
   if (error) {
     return <h2 className="text-red-600">Dígita una ciudad válida</h2>;
   }
   return (
-    <section className="mt-4 bg-background-500 rounded-xl p-10 text-white flex flex-col justify-center">
+    <motion.section
+      initial={{
+        scale: 0.8,
+      }}
+      animate={{
+        x: 0,
+        scale: 1,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        duration: 0.4,
+      }}
+      className="mt-4 bg-background-500 rounded-xl p-10 text-white flex flex-col justify-center"
+    >
       <div className="grid grid-cols-2 gap-2 items-center">
         <div className="flex flex-col gap-3">
           <p>Hoy</p>
@@ -42,6 +57,6 @@ export default function WeatherResult({ weather, error }) {
         <span className="text-yellow-400">Se siente como: </span>
         {weather?.main.feels_like} °C
       </p>
-    </section>
+    </motion.section>
   );
 }
