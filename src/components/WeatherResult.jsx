@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { BiArrowToRight, BiMapPin } from "react-icons/bi";
 import { motion } from "framer-motion";
+import WeatherIcons from "../utils/WeatherIcons";
 
 export default function WeatherResult({ weather, error }) {
   if (error) {
@@ -31,13 +31,8 @@ export default function WeatherResult({ weather, error }) {
           </p>
         </div>
         <div className="flex flex-col justify-center">
-          <div className="self-center justify-self-center">
-            <Image
-              src={`https://openweathermap.org/img/wn/${weather?.weather[0].icon}@4x.png`}
-              alt={weather?.weather[0].description}
-              width={100}
-              height={100}
-            />
+          <div className="self-end justify-self-center">
+            <WeatherIcons code={weather?.weather[0].icon} />
           </div>
         </div>
       </div>
