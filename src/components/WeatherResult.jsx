@@ -1,6 +1,6 @@
 import { BiArrowToRight, BiMapPin } from "react-icons/bi";
 import { motion } from "framer-motion";
-import WeatherIcons from "../utils/WeatherIcons";
+import WeatherIcons from "./WeatherIcons";
 
 export default function WeatherResult({ weather, error }) {
   if (error) {

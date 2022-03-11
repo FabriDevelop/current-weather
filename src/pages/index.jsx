@@ -5,6 +5,8 @@ import Loading from "../components/Loading";
 import WeatherInfo from "../components/WeatherInfo";
 import UseWheater from "../hooks/UseWeather";
 import { motion } from "framer-motion";
+import logo from "../assets/logo.svg";
+import Image from "next/image";
 
 export default function Home() {
   const cityRef = useRef();
@@ -27,12 +29,14 @@ export default function Home() {
       </Head>
       <main className="flex items-center flex-col w-[90%] mx-auto max-w-5xl">
         <div className="flex flex-col md:flex-row items-center gap-20 lg:gap-32 my-2">
-          <h1 className="font-semibold text-white flex items-end gap-1 mt-7 text-lg text-center">
-            Current
-            <span className="text-blue-300 flex items-end">
-              Weather <BiCloud fontSize={30} />
-            </span>
-          </h1>
+          <div className="font-semibold text-white flex items-end gap-1 mt-7 text-center">
+            <Image
+              src={logo}
+              width={200}
+              height={30}
+              alt="Current Weather logo"
+            />
+          </div>
           {!searchBarOpen ? (
             <motion.button
               initial={{
